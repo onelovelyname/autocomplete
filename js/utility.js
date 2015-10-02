@@ -24,18 +24,17 @@ var utility = (function() {
 
   var autocomplete = function (text, textIndex, results) {
     
-    var newResults = {};
-
     // base case: if textIndex > text.length
     if (textIndex > text.length - 1) {
       var returnResults = [];
       for (var prop in results) {
         returnResults.push(prop);
       }
-      console.log(results);
       return returnResults;
     }
 
+    // recursive case
+    var newResults = {};
     var char = text[textIndex];
 
     if (textIndex === 0) {
